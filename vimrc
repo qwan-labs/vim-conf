@@ -186,4 +186,11 @@ inoremap <C-j> <Esc>:m .+1<CR>==gi
 inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
-
+" Handle TERM quirks in vim
+if $TERM =~ '^screen-256color'
+  set t_Co=256
+  nmap <Esc>OH <Home>
+  imap <Esc>OH <Home>
+  nmap <Esc>OF <End>
+  imap <Esc>OF <End>
+endif
